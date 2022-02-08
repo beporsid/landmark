@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Controllers\Dev\SpatiePermissionController;
 use App\Models\Shop;
 use Illuminate\Database\Seeder;
 
@@ -23,6 +24,11 @@ class DatabaseSeeder extends Seeder
             GallerySeeder::class,
             PartnerSeeder::class
         ]);
+
+
+        $spatie = new SpatiePermissionController();
+        $spatie->addRoles();
+        $spatie->assignRoles();
 
     }
 }
